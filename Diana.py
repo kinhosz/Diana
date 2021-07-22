@@ -83,7 +83,7 @@ def buildMessage(buffer, lastMessage, lastDatetime):
     if difference > 5: # 5 min diff
         return "NULL"
     
-    if lastDatetime != -1 and difference - lastDatetime <= 5:
+    if lastDatetime != -1 and buffer[-1]["minute"] - lastDatetime <= 5:
         return "NULL"
 
     dict = {}
@@ -108,7 +108,7 @@ def buildMessage(buffer, lastMessage, lastDatetime):
     if best[0] == "NULL":
         return "NULL"
     
-    if lastMessage == best[0] and difference - lastDatetime <= 5:
+    if lastMessage == best[0] and buffer[-1]["minute"] - lastDatetime <= 5:
         return "NULL"
 
     return best[0]
