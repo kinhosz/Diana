@@ -3,7 +3,7 @@
 
 Este projeto foi realizado para obter informações de reuniões no google Meet.  
 
-## Dependencias
+## Dependências
 Você precisa instalar o Selenium via pip
 ```sh
 pip install selenium
