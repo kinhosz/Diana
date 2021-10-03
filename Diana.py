@@ -168,7 +168,7 @@ def main():
         f = open("data.json","r")
     except:
         print("o arquivo data.json nao foi encontrado.")
-        print("Por favor, visite github.com/kinhosz")
+        print("Por favor, visite github.com/kinhosz/Diana")
         exit(0)
 
     data = json.loads(f.read())
