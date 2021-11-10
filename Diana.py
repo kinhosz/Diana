@@ -34,6 +34,7 @@ def login(data, driver):
     pass_in.send_keys(Keys.RETURN)
     time.sleep(7)
 
+
 def join(data, driver):
 
     meetCode_button = driver.find_elements_by_class_name("VfPpkd-fmcmS-wGMbrd")[0]
@@ -160,6 +161,20 @@ def parseInt(temp):
 
     return temp
 
+def load_driver(link, data):
+
+    path = "./driver/chromedriver_" +  str(data["chrome_version"]) + ".exe"
+    driver = webdriver.Chrome(options=options(), executable_path=path)
+
+    try:
+        driver = webdriver.Chrome(options=options(), executable_path=path)
+    except:
+        print("Nao foi encontrado o webdriver")
+        print("Por favor, visite github.com/kinhosz")
+        exit(0)
+
+    return driver
+
 def main():
 
     link = "https://meet.google.com/"
@@ -174,12 +189,7 @@ def main():
     data = json.loads(f.read())
     f.close()
 
-    try:
-        driver = webdriver.Chrome(options=options(),executable_path="./driver/chromedriver.exe")
-    except:
-        print("Nao foi encontrado o webdriver")
-        print("Por favor, visite github.com/kinhosz")
-        exit(0)
+    driver = load_driver(link, data)
 
     driver.get(link)
 

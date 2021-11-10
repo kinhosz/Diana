@@ -8,9 +8,11 @@ Você precisa instalar o Selenium via pip
 ```sh
 pip install selenium
 ```
-Também instale manualmente o webdriver do chrome para a versão do seu navegador e substitua no diretório ```driver```.
 
-[Webdriver](https://chromedriver.chromium.org/downloads)
+No arquivo `data.json` adicione a versão do seu google Chrome na área designada. Apenas informe os dois primeiros dígios:
+ex.: `95.0.4638.69` adicione apenas `95`.
+
+Para encontrar a versão do google chrome, abra o navegador e vá em: `configurações > sobre o google chrome`.
 
 ## Modo de uso
 
