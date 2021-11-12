@@ -164,7 +164,6 @@ def parseInt(temp):
 def load_driver(link, data):
 
     path = "./driver/chromedriver_" +  str(data["chrome_version"]) + ".exe"
-    driver = webdriver.Chrome(options=options(), executable_path=path)
 
     try:
         driver = webdriver.Chrome(options=options(), executable_path=path)
